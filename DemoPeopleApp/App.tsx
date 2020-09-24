@@ -15,10 +15,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import styles from './App.styles';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer);
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -60,7 +65,7 @@ const App = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </Provider>
   );
 };
 
