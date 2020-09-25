@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {ApplicationStyles, Fonts, Metrics} from '../themes';
+import {ApplicationStyles, Colors, Fonts, Metrics} from '../themes';
 
 export default StyleSheet.create({
   ...ApplicationStyles,
@@ -10,16 +9,16 @@ export default StyleSheet.create({
     padding: Metrics.doubleBaseMargin,
   },
   title: {
-    fontSize: 24,
+    fontSize: Fonts.size.h6,
     fontWeight: '600',
     fontFamily: Fonts.type.bold,
-    color: Colors.black,
+    color: Colors.panther,
   },
   email: {
     marginTop: 8,
-    fontSize: 18,
+    fontSize: Fonts.size.input,
     fontWeight: '400',
-    fontFamily: Fonts.type.base,
+    fontFamily: Fonts.type.emphasis,
     color: 'gray',
   },
 });

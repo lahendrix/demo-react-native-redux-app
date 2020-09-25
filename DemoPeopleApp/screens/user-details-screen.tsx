@@ -9,9 +9,23 @@ class UserDetails extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{userDetails.name}</Text>
+        <Text style={styles.subTitle}>{userDetails.company.name}</Text>
+        <Text style={styles.subTitle}>Contact Information</Text>
         <Text>{userDetails.email}</Text>
-        <Text>{userDetails.username}</Text>
-        <Text>{userDetails.website}</Text>
+        <View>
+          <Text>{userDetails.address.street}</Text>
+          {userDetails.address.suite && (
+            <Text>{userDetails.address.suite}</Text>
+          )}
+          <Text>
+            {userDetails.address.city}, {userDetails.address.zipcode}
+          </Text>
+          <Text>{userDetails.phone}</Text>
+        </View>
+
+        <Text style={styles.subTitle}>Other Information</Text>
+        <Text>Username: {userDetails.username}</Text>
+        <Text>Website: {userDetails.website}</Text>
       </View>
     );
   }

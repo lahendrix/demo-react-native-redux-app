@@ -12,10 +12,11 @@ export default StyleSheet.create({
     color: Colors.black,
     textAlign: 'center',
   },
-  email: {
+  subTitle: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
     color: 'gray',
+    textAlign: 'center',
   },
 });
