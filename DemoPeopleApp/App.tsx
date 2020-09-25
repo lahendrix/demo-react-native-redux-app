@@ -19,8 +19,14 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="home" component={Home} />
-          <Stack.Screen name="details" component={UserDetails} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen
+            name="details"
+            component={UserDetails}
+            options={({route}) => ({
+              title: '',
+            })}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
