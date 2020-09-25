@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './screens/home-screen';
 import UserDetails from './screens/user-details-screen';
-import styles from './App.styles';
 import {applyMiddleware, createStore, Store} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './reducers';
@@ -23,9 +22,9 @@ const App = () => {
           <Stack.Screen
             name="details"
             component={UserDetails}
-            options={({route}) => ({
+            options={{
               title: '',
-            })}
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
