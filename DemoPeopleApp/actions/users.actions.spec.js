@@ -31,4 +31,26 @@ describe('Users Actions', () => {
       done();
     });
   });
+
+  it('Should dispatch the correct actions when fetching users returns an API error', (done) => {
+    const expectedError = {status: 400, message: 'Error fetching users'};
+    API.getUsers.mockReturnValue(Promise.reject(expectedError));
+
+    const expectedActions = [
+      {
+        type: UserActionTypes.GET_USERS,
+      },
+      {
+        type: UserActionTypes.GET_USERS_ERROR,
+        payload: expectedError,
+      },
+    ];
+    const store = mockStore({});
+
+    return store.dispatch(getUsers()).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedActions);
+      done();
+    });
+  });
 });
