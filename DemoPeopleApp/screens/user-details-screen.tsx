@@ -25,6 +25,10 @@ class UserDetails extends React.Component {
     return Linking.openURL(url);
   };
 
+  openWebsite = ({website}) => {
+    return Linking.openURL(`http://${website}`);
+  };
+
   render() {
     const {userDetails} = this.props.route.params;
 
@@ -60,7 +64,12 @@ class UserDetails extends React.Component {
 
         <Text style={styles.sectionHeader}>Other Information</Text>
         <Text style={styles.sectionText}>Username: {userDetails.username}</Text>
-        <Text style={styles.sectionText}>Website: {userDetails.website}</Text>
+        <TouchableOpacity
+          onPress={() => {
+            this.openWebsite({website: userDetails.website});
+          }}>
+          <Text style={styles.sectionText}>Website: {userDetails.website}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
