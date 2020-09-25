@@ -32,7 +32,7 @@ const getUsers = () => {
   return async (dispatch: Dispatch) => {
     dispatch(requestGetUsers());
     try {
-      const response = await API.getUsers();
+      const response: IUser[] = await API.getUsers();
       return dispatch(getUsersSuccess(response));
     } catch (err) {
       dispatch(getUsersError(err));
