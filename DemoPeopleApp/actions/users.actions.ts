@@ -1,3 +1,4 @@
+import {AxiosResponse} from 'axios';
 import {Dispatch} from 'redux';
 import API from '../API';
 import {IUser} from '../interfaces/IUser';
@@ -32,8 +33,8 @@ const getUsers = () => {
   return async (dispatch: Dispatch) => {
     dispatch(requestGetUsers());
     try {
-      const response: IUser[] = await API.getUsers();
-      return dispatch(getUsersSuccess(response));
+      const response: AxiosResponse<IUser[]> = await API.getUsers();
+      return dispatch(getUsersSuccess(response.data));
     } catch (err) {
       dispatch(getUsersError(err));
     }

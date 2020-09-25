@@ -17,7 +17,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('props', this.props.users);
     const renderItem = ({item}) => (
       <UserCard name={item.name} email={item.email} />
     );

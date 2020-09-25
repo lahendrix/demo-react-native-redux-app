@@ -13,7 +13,7 @@ jest.mock('../API', () => {
 
 describe('Users Actions', () => {
   it('Should dispatch the correct actions when fetching users', (done) => {
-    API.getUsers.mockReturnValue(Promise.resolve(TEST_USERS));
+    API.getUsers.mockReturnValue(Promise.resolve({data: TEST_USERS}));
     const expectedActions = [
       {
         type: UserActionTypes.GET_USERS,
