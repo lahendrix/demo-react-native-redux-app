@@ -5,10 +5,12 @@ import {IUser} from '../interfaces/IUser';
 export interface IUsersState {
   loading: boolean;
   users: IUser[];
+  error: any;
 }
 export const INITIAL_STATE: IUsersState = {
   loading: false,
   users: [],
+  error: null,
 };
 
 export default (state: IUsersState = INITIAL_STATE, action: Action) => {
